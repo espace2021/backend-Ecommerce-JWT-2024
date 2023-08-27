@@ -28,7 +28,7 @@ router.get('/',async (req, res )=> {
 });
 
 // afficher la liste des articles par page
-/*router.get('/productspage/', async(req, res) => {
+router.get('/productspage/', async(req, res) => {
 
     const page = req.query.page || 1; // Get the current page number from the query parameters
     const pagesize = req.query.pagesize ||5; // Number of items per page
@@ -88,7 +88,7 @@ router.get('/filtres/', async(req, res) => {
 }
 });
 
-*/
+
 
 // créer un nouvel article
 router.post('/', async (req, res) =>  { 
