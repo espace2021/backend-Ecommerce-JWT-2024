@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Article=require("../models/article")
-/*
+
 // chercher un article par s/cat
 router.get('/scat/:scategorieID',async(req, res)=>{
     try {
@@ -12,18 +12,8 @@ router.get('/scat/:scategorieID',async(req, res)=>{
         res.status(404).json({ message: error.message });
     }
 });
-*/
-// afficher la liste des articles.
-/*router.get('/', async (req, res, )=> {
-    try {
-        const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();
-                
-        res.status(200).json(articles);
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
 
-});*/
+// afficher la liste des articles.
 
 router.get('/',async (req, res )=> {
     try {
