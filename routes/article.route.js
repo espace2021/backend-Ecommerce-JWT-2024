@@ -27,7 +27,7 @@ router.get('/scat/:scategorieID',async(req, res)=>{
 
 router.get('/',async (req, res )=> {
     try {
-      const articles = await Article.find().populate("scategorieID").exec();
+      const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();
 
               
       res.status(200).json(articles);
