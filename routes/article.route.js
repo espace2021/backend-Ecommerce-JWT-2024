@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Article=require("../models/article")
-
+/*
 // chercher un article par s/cat
 router.get('/scat/:scategorieID',async(req, res)=>{
     try {
@@ -12,9 +12,9 @@ router.get('/scat/:scategorieID',async(req, res)=>{
         res.status(404).json({ message: error.message });
     }
 });
-
+*/
 // afficher la liste des articles.
-router.get('/', async (req, res, )=> {
+/*router.get('/', async (req, res, )=> {
     try {
         const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();
                 
@@ -23,10 +23,22 @@ router.get('/', async (req, res, )=> {
         res.status(404).json({ message: error.message });
     }
 
+});*/
+
+router.get('/',async (req, res )=> {
+    try {
+      const articles = await Article.find().populate("scategorieID").exec();
+
+              
+      res.status(200).json(articles);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+
 });
 
 // afficher la liste des articles par page
-router.get('/productspage/', async(req, res) => {
+/*router.get('/productspage/', async(req, res) => {
 
     const page = req.query.page || 1; // Get the current page number from the query parameters
     const pagesize = req.query.pagesize ||5; // Number of items per page
@@ -86,7 +98,7 @@ router.get('/filtres/', async(req, res) => {
 }
 });
 
-
+*/
 
 // créer un nouvel article
 router.post('/', async (req, res) =>  { 
