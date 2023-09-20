@@ -7,6 +7,7 @@ const categorieRouter =require("./routes/categorie.route") ;
 const scategorieRouter =require("./routes/scategorie.route");
 const articleRouter =require("./routes/article.route");
 const userRouter =require("./routes/user.route");
+const paymentRouter =require("./routes/payment.route.js");
 
 dotenv.config()
 const app = express();
@@ -44,6 +45,8 @@ app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter);
 
 app.use('/api/users', userRouter);
+
+app.use('/api/payment', paymentRouter);
 
 app.listen(process.env.PORT, () => {
  console.log(`Server is listening on port ${process.env.PORT}`); });
